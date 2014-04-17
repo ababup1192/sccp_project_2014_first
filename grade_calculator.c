@@ -16,7 +16,7 @@ typedef struct
 } Grade;
 
 // Prototype declaration
-int read_grade_from_file(Grade[]);
+int read_grade_from_csv(Grade[]);
 int calc_summation(int, Grade[]);
 double calc_average(int, int);
 void output_average(double);
@@ -30,18 +30,19 @@ int main(){
 	//main flow
 
 	// input
-	row = read_grade_from_file(grades);
+	row = read_grade_from_csv(grades);
 	// computation
 	sum = calc_summation(row, grades);
 	ave = calc_average(row, sum);
 	// output
 	output_average(ave);
 	output_summation(sum);
+
 	return 0;
 }
 
 // Return last column number
-int read_grade_from_file(Grade grades[]){
+int read_grade_from_csv(Grade grades[]){
 	int row = 0;
 	char buff[N];
 	FILE *fp;
