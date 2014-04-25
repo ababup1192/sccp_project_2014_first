@@ -86,5 +86,3 @@ void output_average(double ave){
 void output_summation(int sum){
 	printf("Summation = %d\n", sum);
 }
-
-
