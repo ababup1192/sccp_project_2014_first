@@ -6,18 +6,17 @@ File::open("./ConstitutionOfJapan.txt") do |f|
 	end
 end
 
-hash = Hash.new()
+word_hash = Hash.new()
 words_list = words.flatten.sort
-word_list = words_list.uniq
 
 words_list.each do |word|
-	if hash.key?(word)
-		hash[word] = hash[word] + 1
+	if word_hash.key?(word)
+		word_hash[word] = word_hash[word] + 1
 	else
-		hash[word] = 1
+		word_hash[word] = 1
 	end
 end
 
-word_list.each do |w|
-	puts "#{w} #{hash[w]}"
+word_hash.each do |key, value|
+	puts "#{key} #{value}"
 end
