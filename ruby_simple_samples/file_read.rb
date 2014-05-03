@@ -1,5 +1,9 @@
 # coding: utf-8
 
-File.open('./memo') do |f|
-	puts f.read
+if ARGV[0].empty? then
+	puts "Please input a file."
+else
+	File.open("./#{ARGV[0]}") do |f|
+		puts f.read
+	end
 end
